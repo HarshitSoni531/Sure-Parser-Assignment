@@ -1,0 +1,21 @@
+# --- core web ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+
+# --- storage / ORM ---
+sqlalchemy>=2.0
+
+# --- auth / security ---
+passlib[bcrypt]>=1.7
+python-jose[cryptography]>=3.3
+
+# --- uploads / forms ---
+python-multipart>=0.0.9
+
+# --- pdf parsing ---
+pdfplumber>=0.11
+pillow>=10.0
+
+# --- settings / env ---
+pydantic-settings>=2.3
+python-dotenv>=1.0

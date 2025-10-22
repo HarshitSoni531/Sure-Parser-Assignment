@@ -1,0 +1,91 @@
+{
+  "card_variant": "HDFC Paytm",
+  "card_last_4_digits": "3458",
+  "billing_cycle": "26-02-2023 to 12-03-2023",
+  "payment_due_date": "0 GST",
+  "total_amount_due": "₹0",
+  "transactions": [
+    {
+      "date": "26-02-2023",
+      "description": "PAYTM NOIDA",
+      "amount": "-₹5217.50"
+    },
+    {
+      "date": "26-02-2023",
+      "description": "Paytm NOIDA",
+      "amount": "-₹5217.50"
+    },
+    {
+      "date": "26-02-2023",
+      "description": "Paytm NOIDA",
+      "amount": "-₹1460.90"
+    },
+    {
+      "date": "26-02-2023",
+      "description": "PAYTM ECOMMERCE NOIDA",
+      "amount": "-₹2.00"
+    },
+    {
+      "date": "26-02-2023",
+      "description": "MAKEMYTRIP INDIA PVT LTNEW DELHI",
+      "amount": "-₹2358.00"
+    },
+    {
+      "date": "26-02-2023",
+      "description": "PAYTM ECOMMERCE NOIDA",
+      "amount": "+₹2.00"
+    },
+    {
+      "date": "27-02-2023",
+      "description": "Paytm NOIDA",
+      "amount": "-₹3130.50"
+    },
+    {
+      "date": "27-02-2023",
+      "description": "Paytm NOIDA",
+      "amount": "-₹2087.00"
+    },
+    {
+      "date": "27-02-2023",
+      "description": "MAKEMYTRIP INDIA PVT LTNEW DELHI",
+      "amount": "-₹3130.00"
+    },
+    {
+      "date": "27-02-2023",
+      "description": "ONE MOBIKWIK GURGAON",
+      "amount": "-₹5125.00"
+    },
+    {
+      "date": "27-02-2023",
+      "description": "PAYTM BUS NOIDA",
+      "amount": "-₹2730.00"
+    },
+    {
+      "date": "27-02-2023",
+      "description": "ONE MOBIWIK SYSTEM PVT LTGURGAON",
+      "amount": "-₹1000.00"
+    },
+    {
+      "date": "27-02-2023",
+      "description": "ONE MOBIKWIK GURGAON",
+      "amount": "-₹2012.50"
+    },
+    {
+      "date": "28-02-2023",
+      "description": "OVERLIMIT FEE (Ref# 19999999980228999789990)",
+      "amount": "-₹550.00"
+    },
+    {
+      "date": "28-02-2023",
+      "description": "IGST-VPS2306075351925-RATE 18.0 -08 (Ref# 19999999980228999789990)",
+      "amount": "-₹99.00"
+    },
+    {
+      "date": "01-03-2023",
+      "description": "MOBIKWIKUPI Chennai (Ref# VT230620074000770000141)",
+      "amount": "+₹400.00"
+    }
+  ],
+  "issuer": "HDFC",
+  "parsed_at": "2025-10-22T00:46:06.239564"
+}

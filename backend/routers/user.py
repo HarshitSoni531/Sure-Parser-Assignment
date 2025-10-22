@@ -2,11 +2,11 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from ..database import get_db
-from .. import models
-from ..schemas import UserCreate, UserOut
-from ..hashing import Hash
-from ..oauth2 import get_current_user
+from database import get_db
+import models
+from schemas import UserCreate, UserOut
+from hashing import Hash
+from oauth2 import get_current_user
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
@@ -33,3 +33,4 @@ def get_user_by_id(user_id: int, db: Session = Depends(get_db)):
 @router.get("/me", response_model=UserOut)
 def me(current_user: models.User = Depends(get_current_user)):
     return UserOut.model_validate(current_user, from_attributes=True)
+

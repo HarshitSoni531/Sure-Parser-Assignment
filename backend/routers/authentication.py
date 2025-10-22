@@ -3,11 +3,12 @@ from datetime import timedelta
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
 
-from ..database import get_db
-from .. import models
-from ..hashing import Hash
-from ..JWTtoken import create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES
-from ..schemas import UserCreate, UserOut, Token  # <-- IMPORTANT
+from database import get_db
+import models
+from hashing import Hash
+from JWTtoken import create_access_token, ACCESS_TOKEN_EXPIRE_MINUTES
+from schemas import UserCreate, UserOut, Token  # <-- IMPORTANT
+
 # No change to your imports above
 
 router = APIRouter(tags=["auth"])
@@ -62,3 +63,4 @@ async def login(request: Request, db: Session = Depends(get_db)):
         expires_delta=timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES),
     )
     return Token(access_token=token)
+

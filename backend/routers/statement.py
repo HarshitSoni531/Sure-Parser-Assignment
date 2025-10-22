@@ -10,13 +10,14 @@ from typing import Optional, Dict, Any, List
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form, status
 from sqlalchemy.orm import Session
 
-from ..database import get_db
-from .. import models
-from ..oauth2 import get_current_user
-from ..schemas import StatementInDB, StatementWithTxns, TransactionInDB, ParseResponse
+from database import get_db
+import models
+from oauth2 import get_current_user
+from schemas import StatementInDB, StatementWithTxns, TransactionInDB, ParseResponse
 
 # ✅ import the class, then create ONE global instance
-from ..services.universal_credit_card_parser import UniversalCreditCardParser
+from services.universal_credit_card_parser import UniversalCreditCardParser
+
 
 router = APIRouter(prefix="/statements", tags=["statements"])
 
@@ -269,3 +270,4 @@ def get_statement(
         **StatementInDB.model_validate(s).model_dump(),
         transactions=[TransactionInDB.model_validate(t) for t in txns],
     )
+

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from .database import Base  # relative
+from database import Base  # relative
 
 class User(Base):
     __tablename__ = "users"
@@ -48,3 +48,4 @@ class Transaction(Base):
     amount = Column(String(32))
 
     statement = relationship("Statement", back_populates="transactions")
+

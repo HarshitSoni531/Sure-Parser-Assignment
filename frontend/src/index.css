@@ -1,0 +1,284 @@
+/* ===========================================
+   🌐 GLOBAL DESIGN SYSTEM — Sure Finance
+   Refined by GPT — Built for Professional Impact
+   =========================================== */
+
+/* Tailwind v4 import syntax */
+@import "tailwindcss";
+
+/* ---------- COLOR & TYPOGRAPHY THEME ---------- */
+:root {
+  color-scheme: light dark;
+
+  /* Primary Palette — corporate blue + warm neutrals */
+  --brand-primary: #2563eb; /* Deep Blue */
+  --brand-primary-hover: #1e4fd7;
+  --brand-accent: #0f9da3; /* Teal Accent */
+  --brand-accent-hover: #0b7e82;
+
+  --brand-bg-light: #f9fafb; /* Background Gray */
+  --brand-bg-dark: #0b0f17; /* Dark Mode Background */
+  --brand-card-light: #ffffff;
+  --brand-card-dark: #111827;
+
+  --brand-border: #e5e7eb;
+  --brand-border-dark: #1f2937;
+
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-on-dark: #f3f4f6;
+
+  /* Shadows and radii */
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Font stacks */
+  --font-sans: "Inter", "SF Pro Display", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--brand-bg-light);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100%;
+}
+
+.dark {
+  background-color: var(--brand-bg-dark);
+  color: var(--text-on-dark);
+}
+
+/* ===========================================
+   🧭 CORE COMPONENT STYLES
+   =========================================== */
+
+/* BUTTONS */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 font-medium rounded-lg transition-all duration-200;
+  background-color: var(--brand-primary);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:hover {
+  background-color: var(--brand-primary-hover);
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-accent {
+  background-color: var(--brand-accent);
+}
+
+.btn-accent:hover {
+  background-color: var(--brand-accent-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--brand-primary);
+  border: 1px solid var(--brand-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-primary);
+  color: #fff;
+}
+
+/* INPUTS */
+.input {
+  @apply w-full px-3 py-2 border rounded-lg text-sm transition-all duration-150;
+  border-color: var(--brand-border);
+  background-color: #fff;
+  color: var(--text-primary);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* CARDS */
+.card {
+  @apply p-6 transition-all duration-300;
+  background-color: var(--brand-card-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--brand-border);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.dark .card {
+  background-color: var(--brand-card-dark);
+  border-color: var(--brand-border-dark);
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-subtle {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--brand-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--brand-primary-hover);
+}
+
+/* ===========================================
+   ✨ UTILITY + ELEVATION
+   =========================================== */
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+/* TOAST / ALERTS */
+.alert {
+  @apply px-4 py-3 rounded-lg text-sm flex items-center gap-3;
+  box-shadow: var(--shadow-soft);
+}
+
+.alert-success {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.alert-error {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+/* ===========================================
+   🌈 INTERACTIONS
+   =========================================== */
+button,
+input,
+select,
+textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* ===========================================
+   💼 LAYOUT ENHANCEMENTS
+   =========================================== */
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Smooth hover fade for cards, buttons, links */
+.hover-fade {
+  transition: all 0.25s ease;
+}
+
+.hover-fade:hover {
+  opacity: 0.85;
+}
+
+/* ===========================================
+   🌙 DARK MODE ENHANCEMENTS
+   =========================================== */
+.dark .btn {
+  background-color: var(--brand-accent);
+}
+
+.dark .btn:hover {
+  background-color: var(--brand-accent-hover);
+}
+
+.dark .input {
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+.dark .card {
+  background-color: #111827;
+  border-color: #1f2937;
+}
+
+/* ===========================================
+   🧩 FINISHING TOUCHES
+   =========================================== */
+::selection {
+  background-color: var(--brand-primary);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(37, 99, 235, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(37, 99, 235, 0.6);
+}

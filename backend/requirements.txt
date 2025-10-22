@@ -19,3 +19,4 @@ pillow>=10.0
 # --- settings / env ---
 pydantic-settings>=2.3
 python-dotenv>=1.0
+pydantic[email]

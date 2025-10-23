@@ -9,6 +9,13 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Sure Financial - Credit Card Parser", version="1.0.0")
 
+ALLOWED_ORIGINS = [
+    "https://sure-parser-assignment.vercel.app",   # Vercel prod
+    "http://localhost:5173",                       # Vite dev
+    "http://127.0.0.1:5173",
+]
+
+
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
@@ -27,3 +34,4 @@ app.include_router(statement.router)
 @app.get("/healthz")
 def health():
     return {"status": "ok"}
+

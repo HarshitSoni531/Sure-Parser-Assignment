@@ -3,15 +3,22 @@ import axios from "axios";
 
 /**
  * Axios client
- * - Base URL from Vite env or defaults to local FastAPI
+ * - Base URL from Vite env or defaults to your deployed FastAPI
  * - Attaches Authorization: Bearer <token> from localStorage automatically
  */
+const envBase = import.meta.env.VITE_API_URL;
+// Default to the Render URL if no env is provided
+let baseURL = envBase || "https://sure-parser-assignment-1.onrender.com";
+// guard against accidental trailing slashes
+baseURL = baseURL.replace(/\/+$/, "");
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000",
+  baseURL,
   withCredentials: false,
+  timeout: 30000,
 });
 
-// attach JWT for every request if present
+// Attach JWT for every request if present
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) {
@@ -35,15 +42,16 @@ export async function registerUser(email, password) {
   return res.data;
 }
 
-export async function uploadStatement(file) {
+export async function uploadStatement(file, issuer = "auto") {
   const form = new FormData();
   form.append("file", file);
+  form.append("issuer", issuer);
   const res = await api.post("/statements/upload", form);
   return res.data;
 }
 
 export async function getStatements() {
-  const res = await api.get("/statements/");
+  const res = await api.get("/statements");
   return res.data;
 }
 
